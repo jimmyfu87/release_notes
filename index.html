@@ -64,8 +64,8 @@
             // take content to transfer to html
             let converter = new showdown.Converter();
             let content_html = converter.makeHtml(response["content"]);
-            // prettify
-            content_html = content_html.replaceAll('<pre', '<pre class="prettyprint linenums"')
+            // prettify(讓程式有方框，但有可能產生問題，先註解)
+            // content_html = content_html.replaceAll('<pre', '<pre class="prettyprint linenums"')
             // put content_html into content
             let content = document.getElementById('content');
             content.innerHTML = content_html
