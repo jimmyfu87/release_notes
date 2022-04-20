@@ -24,6 +24,12 @@
     </div>
 
     <br>
+    <div id='subPage' class="container bg-light">
+        <div class="col-md-12 text-center">
+
+        </div>
+    </div>
+    <br>
     <div id='content' class="container bg-light">
         <div class="col-md-12 text-center">
 
@@ -37,20 +43,20 @@
 
 </body>
 <script>
-    function display_md() {
+    function display_md(path = '/README') {
         let request = new XMLHttpRequest();
         // define the parameter
         let organization = 'jimmyfu87'
         let project_name = 'release_notes'
         let wiki_name = 'release_notes.wiki'
-        let file_path = '/README'
+        let file_path = path
         let endpoint = "https://dev.azure.com/" + organization + "/" + project_name +
             '/_apis/wiki/wikis/' + wiki_name + '/pages?path=' + file_path +
-            '&includeContent=True&api-version=6.0'
+            "&includeContent=True&api-version=6.0&recursionLevel=full"
         // person access token(PAT)
         let username = ''
-        let pat = 'al7fpssqjb75wkjn5e6ntqoajzdv4ejffu6rpaellv4ow2gj2rcq'
-        // base64 encode 
+        //pat key(這邊填入pat)
+        let pat =  ""
         let base64_pat = btoa(username + ":" + pat)
         let basic_auth = 'Basic ' + base64_pat
         // set request and header
@@ -61,6 +67,13 @@
         request.onload = function () {
             // transfer to json 
             let response = JSON.parse(request.responseText);
+            let subPages = response["subPages"]
+            let sub_html = ""
+            for (let i = 0; i < subPages.length; i++) {
+                file_path = subPages[i]['path']
+                sub_html += "<br>" + "<input type='button' class='btn btn-secondary' onclick='display_md(this.value)' value='" + file_path + "'>" + "</input> <br>";
+            }
+            document.getElementById("subPage").innerHTML = sub_html
             // take content to transfer to html
             let converter = new showdown.Converter();
             let content_html = converter.makeHtml(response["content"]);
@@ -73,5 +86,6 @@
         request.send();
     }
 </script>
+
 
 </html>
