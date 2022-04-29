@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src='ajax.js'></script>
+    <title>Display Work Item</title>
+</head>
+
+<body>
+    </br>
+    <div class="container bg-light">
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-primary" onclick="show_description();">Show Work Item</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div id='title' class="container bg-light">
+        <div class="col-md-12 text-center"></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+          
+            <div class="col-sm-12">
+                <div class="card" >
+                    <h5 class="card-header">Title</h5>
+                    <div  class="card-body">
+                        <h5 class="card-title"></h5>
+                        <h5 id="item_title" class="card-text"></h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4"></div>
+        </div>
+        <br></br>
+        <div class="row">
+          
+            <div class="col-sm-12">
+                <div class="card">
+                    <h5  class="card-header">Description</h5>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p id="item_description" class="card-text"></p>
+                    </div>
+                    <div id="last_date" class="card-footer text-muted">  </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4"></div>
+        </div>
+        <br></br>
+        <div class="row">
+           
+            <div class="col-sm-12">
+                <div class="card">
+                    <h5 id="item_title" class="card-header">Discussion</h5>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p id="item_discussion" class="card-text"></p>
+                    </div>
+                    <div id="last_date" class="card-footer text-muted">  </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>
