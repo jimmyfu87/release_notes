@@ -11,7 +11,7 @@
         // person access token(PAT)
         let username = ''
         //pat key(這邊填入pat)
-        let pat = "vwzrzbuj52qly43dedvktnc4einuk5s5q5ynpypq2azc2tzxpq7a"
+        let pat = ""
         let base64_pat = btoa(username + ":" + pat)
         let basic_auth = 'Basic ' + base64_pat
         // set request and header
@@ -48,7 +48,7 @@
         // person access token(PAT)
         let username = ''
         //pat key(這邊填入pat)
-        let pat = "vwzrzbuj52qly43dedvktnc4einuk5s5q5ynpypq2azc2tzxpq7a"
+        let pat = ""
         let base64_pat = btoa(username + ":" + pat)
         let basic_auth = 'Basic ' + base64_pat
         // set request and header
